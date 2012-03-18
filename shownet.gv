@@ -1,0 +1,22 @@
+digraph G {
+ ranksep=2;
+ ratio=auto;
+"SWITCH" [ label="switch" shape="box",style="filled",color="grey" ];
+"Internet" [ label="internet", shape="hexagon",style="filled",color="green" ];
+"CGN2" [ label="AFTR CGN 2",shape="box",style="filled",color="grey" ];
+"CGN1" [ label="AFTR CGN 1",shape="box",style="filled",color="grey" ];
+"SD-CPE1" [ label="Cerowrt WNDR3800\n172.28.0.0/24",shape="box",style="filled",color="grey" ];
+"SD-CPE2" [ label="Cerowrt WNDR3700v2\n172.28.1.0/24",shape="box",style="filled",color="grey" ];
+"SWITCH" -> "CGN1" [ label="192.x82.2.2",color="blue",arrowhead="dot" ];
+"SWITCH" -> "CGN2" [ label="192.2.2.22",color="purple",arrowhead="none" ];
+"SWITCH" -> "SD-CPE1" [ color="purple",arrowhead="none" ];
+"SWITCH" -> "SD-CPE2" [ color="purple",arrowhead="none" ];
+"client1" [ label="laptop1",shape="box",style="filled",color="grey" ];
+"client2" [ label="laptop2",shape="box",style="filled",color="grey" ];
+"client3" [ label="laptop3",shape="box",style="filled",color="grey" ];
+"Internet" -> "CGN1" [ label="db00",color="blue",arrowhead="dot" ];
+"Internet" -> "CGN2" [ label="db001",color="blue",arrowhead="dot" ];
+"SD-CPE1" -> "client1" [ color="purple",arrowhead="none" ];
+"SD-CPE1" -> "client2" [ color="purple",arrowhead="none" ];
+"SD-CPE2" -> "client3" [ color="purple",arrowhead="none" ];
+}
