@@ -1,22 +1,33 @@
 digraph G {
  ranksep=2;
  ratio=auto;
-"SWITCH" [ label="switch" shape="box",style="filled",color="grey" ];
-"Internet" [ label="internet", shape="hexagon",style="filled",color="green" ];
-"CGN2" [ label="AFTR CGN 2",shape="box",style="filled",color="grey" ];
-"CGN1" [ label="AFTR CGN 1",shape="box",style="filled",color="grey" ];
-"SD-CPE1" [ label="Cerowrt WNDR3800\n172.28.0.0/24",shape="box",style="filled",color="grey" ];
-"SD-CPE2" [ label="Cerowrt WNDR3700v2\n172.28.1.0/24",shape="box",style="filled",color="grey" ];
-"SWITCH" -> "CGN1" [ label="192.x82.2.2",color="blue",arrowhead="dot" ];
-"SWITCH" -> "CGN2" [ label="192.2.2.22",color="purple",arrowhead="none" ];
-"SWITCH" -> "SD-CPE1" [ color="purple",arrowhead="none" ];
-"SWITCH" -> "SD-CPE2" [ color="purple",arrowhead="none" ];
-"client1" [ label="laptop1",shape="box",style="filled",color="grey" ];
-"client2" [ label="laptop2",shape="box",style="filled",color="grey" ];
-"client3" [ label="laptop3",shape="box",style="filled",color="grey" ];
-"Internet" -> "CGN1" [ label="db00",color="blue",arrowhead="dot" ];
-"Internet" -> "CGN2" [ label="db001",color="blue",arrowhead="dot" ];
-"SD-CPE1" -> "client1" [ color="purple",arrowhead="none" ];
-"SD-CPE1" -> "client2" [ color="purple",arrowhead="none" ];
-"SD-CPE2" -> "client3" [ color="purple",arrowhead="none" ];
+ "SWITCH" [label="Netgear Switch\n        MAC: UN:KN:OW:N:\lMGMT IP:192.168.1.99\l"
+	   shape="box",style="filled",color="grey" ];
+ "Internet" [label="internet",
+	     shape="hexagon",style="filled",color="green" ];
+ "SD-AFTR-2" [label="SD-AFTR-2(laptop 2)\n       MAC: UN:KN:OW:N:\lIPv6 EXT:2001:UNKNOWN::1\lIPv6 INT:2001:db8::/32\l",
+	      shape="box",style="filled",color="grey" ];
+ "SD-AFTR-1" [label="SD-AFTR-1(laptop 1)\n       MAC: UN:KN:OW:N:\lIPv6 EXT:2001:UNKNOWN::1\lIPv6 INT:2001:db8::1/32\l",
+	      shape="box",style="filled",color="grey" ];
+ "SD-CPE1" [label="Cerowrt WNDR3800 (SD-CPE 1)\nEXT MAC: 74:44:01:93:67:1B\l EXT IPv6: 2001:db8::2/64\l     INT IP: 172.28.0.0/24\l",
+	    shape="box",style="filled",color="grey" ];
+ "SD-CPE2" [label="Cerowrt WNDR3700v2 (SD-CPE 2)\nEXT MAC: UN:KN:OW:N:::\lEXT IPv6: 2001:db8::3/64\l    INT IP: 172.28.1.0/24\l",
+	    shape="box",style="filled",color="grey" ];
+ "wireshark" [label="Wireshark Laptop\nEXT MAC: UN:KN:OW:N:::\l INT IP: NONE (raw port)\l",
+	    shape="box",style="filled",color="grey" ];
+ "SWITCH" -> "SD-AFTR-2" [ label="192.82.2.2",color="blue",arrowhead="crow" ];
+ "SWITCH" -> "SD-AFTR-1" [ label="192.2.2.22",color="blue",arrowhead="crow" ];
+ "SWITCH" -> "SD-CPE1" [ color="purple",arrowhead="crow" ];
+ "SWITCH" -> "SD-CPE2" [ color="purple",arrowhead="crow" ];
+ "SWITCH" -> "wireshark" [ color="red",arrowhead="crow" ];
+ "client1" [ label="laptop3",shape="box",style="filled",color="grey" ];
+ "client2" [ label="random laptop",shape="box",style="filled",color="grey" ];
+ "client3" [ label="random laptop",shape="box",style="filled",color="grey" ];
+ "client4" [ label="random laptop (wireless)",shape="box",style="filled",color="grey" ];
+ "Internet" -> "SD-AFTR-1" [ label="IPv6: UNKNOWN",color="green",arrowhead="crow" ];
+ "Internet" -> "SD-AFTR-2" [ label="IPv6: UNKNOWN",color="green",arrowhead="crow" ];
+ "SD-CPE1" -> "client1" [ color="red",arrowhead="crow" ];
+ "SD-CPE1" -> "client2" [ color="red",arrowhead="crow" ];
+ "SD-CPE2" -> "client3" [ color="red",arrowhead="crow" ];
+ "SD-CPE2" -> "client4" [ color="yellow",style="dashed",arrowhead="none" ];
 }
