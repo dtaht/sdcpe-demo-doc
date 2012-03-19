@@ -23,11 +23,11 @@ digraph G {
  "client1" [ label="laptop3",shape="box",style="filled",color="grey" ];
  "client2" [ label="random laptop",shape="box",style="filled",color="grey" ];
  "client3" [ label="random laptop",shape="box",style="filled",color="grey" ];
- "client4" [ label="random laptop (wireless)",shape="box",style="filled",color="grey" ];
+# "client4" [ label="random laptop (wireless)",shape="box",style="filled",color="grey" ];
  "Internet" -> "SD-AFTR-1" [ label="IPv6: UNKNOWN",color="green",arrowhead="crow" ];
  "Internet" -> "SD-AFTR-2" [ label="IPv6: UNKNOWN",color="green",arrowhead="crow" ];
  "SD-B4-1" -> "client1" [ color="red",arrowhead="crow" ];
  "SD-B4-1" -> "client2" [ color="red",arrowhead="crow" ];
  "SD-B4-2" -> "client3" [ color="red",arrowhead="crow" ];
- "SD-B4-2" -> "client4" [ color="yellow",style="dashed",arrowhead="none" ];
+# "SD-B4-2" -> "client4" [ color="yellow",style="dashed",arrowhead="none" ];
 }
