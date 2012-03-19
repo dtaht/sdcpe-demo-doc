@@ -1,22 +1,22 @@
 digraph G {
  ranksep=2;
  ratio=auto;
- "SWITCH" [label="Netgear Switch\n        MAC: UN:KN:OW:N:\lMGMT IP:192.168.1.99\l"
+ "SWITCH" [label="Netgear Switch\n        MAC: UN:KN:OW:N:\lMGMT IP:172.27.1.99\l"
 	   shape="box",style="filled",color="grey" ];
  "Internet" [label="internet",
 	     shape="hexagon",style="filled",color="green" ];
- "SD-AFTR-2" [label="SD-AFTR-2(laptop 2)\n       MAC: UN:KN:OW:N:\lIPv6 EXT:2001:UNKNOWN::1\lIPv6 INT:2001:db8::/32\l",
+ "SD-AFTR-2" [label="SD-AFTR-2(laptop 2)\n       MAC: UN:KN:OW:N:\lIPv4 EXT:\lIPv4 INT:\lIPv6 EXT:2001:UNKNOWN::1\lIPv6 INT:2001:db8::/32\lI do not get ^^^^^ how this failover thing\nis supposed to work\nDNS: on both sides",
 	      shape="box",style="filled",color="grey" ];
- "SD-AFTR-1" [label="SD-AFTR-1(laptop 1)\n       MAC: UN:KN:OW:N:\lIPv6 EXT:2001:UNKNOWN::1\lIPv6 INT:2001:db8::1/32\l",
+ "SD-AFTR-1" [label="SD-AFTR-1(laptop 1)\n       MAC: UN:KN:OW:N:\lIPv4 EXT:\lIPv4 INT:\lIPv6 EXT:2001:UNKNOWN::1\lIPv6 INT:2001:db8::1/32\lDNS: on both sides",
 	      shape="box",style="filled",color="grey" ];
- "SD-CPE1" [label="Cerowrt WNDR3800 (SD-CPE 1)\nEXT MAC: 74:44:01:93:67:1B\l EXT IPv6: 2001:db8::2/64\l     INT IP: 172.28.0.0/24\l",
+ "SD-CPE1" [label="Cerowrt WNDR3800 (SD-CPE 1)\nEXT MAC: 74:44:01:93:67:1B\l EXT IPv6: 2001:db8::2/64\l     INT IP: 172.28.0.0/24\lDNS FORWARDER:2001:db8::1\l",
 	    shape="box",style="filled",color="grey" ];
- "SD-CPE2" [label="Cerowrt WNDR3700v2 (SD-CPE 2)\nEXT MAC: UN:KN:OW:N:::\lEXT IPv6: 2001:db8::3/64\l    INT IP: 172.28.1.0/24\l",
+ "SD-CPE2" [label="Cerowrt WNDR3700v2 (SD-CPE 2)\nEXT MAC: UN:KN:OW:N:::\lEXT IPv6: 2001:db8::3/64\l    INT IP: 172.28.1.0/24\lDNS FORWARDER:2001:db8::1\l",
 	    shape="box",style="filled",color="grey" ];
  "wireshark" [label="Wireshark Laptop\nEXT MAC: UN:KN:OW:N:::\l INT IP: NONE (raw port)\l",
 	    shape="box",style="filled",color="grey" ];
- "SWITCH" -> "SD-AFTR-2" [ label="192.82.2.2",color="blue",arrowhead="crow" ];
- "SWITCH" -> "SD-AFTR-1" [ label="192.2.2.22",color="blue",arrowhead="crow" ];
+ "SWITCH" -> "SD-AFTR-2" [ label="172.27.1.0/24",color="blue",arrowhead="crow" ];
+ "SWITCH" -> "SD-AFTR-1" [ label="172.27.1.0/24",color="blue",arrowhead="crow" ];
  "SWITCH" -> "SD-CPE1" [ color="purple",arrowhead="crow" ];
  "SWITCH" -> "SD-CPE2" [ color="purple",arrowhead="crow" ];
  "SWITCH" -> "wireshark" [ color="red",arrowhead="crow" ];
