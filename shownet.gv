@@ -13,21 +13,19 @@ digraph G {
 	    shape="box",style="filled",color="grey" ];
  "SD-B4-2" [label="Cerowrt WNDR3700v2 (SD-B4 2)\nEXT MAC: C4:3D:C7:9D:DF:1E\lEXT IPv6: 2001:db8:0.1::3/64\l    INT IP: 172.28.1.1/24\lDNS FORWARDER:172.29.0.33 (ipv4 temporarily only) 2001:db8:0:1::1\l",
 	    shape="box",style="filled",color="grey" ];
- "wireshark" [label="Wireshark Laptop (whose?)\nEXT MAC: UN:KN:OW:N:::\l INT IP: NONE (raw port)\l",
-	    shape="box",style="filled",color="grey" ];
+# "wireshark" [label="Wireshark Laptop (whose?)\nEXT MAC: UN:KN:OW:N:::\l INT IP: NONE (raw port)\l",
+#	    shape="box",style="filled",color="grey" ];
  "SWITCH" -> "SD-AFTR-2" [ label="172.27.1.0/24",color="blue",arrowhead="crow" ];
  "SWITCH" -> "SD-AFTR-1" [ label="172.27.1.0/24",color="blue",arrowhead="crow" ];
  "SWITCH" -> "SD-B4-1" [ color="purple",arrowhead="crow" ];
  "SWITCH" -> "SD-B4-2" [ color="purple",arrowhead="crow" ];
- "SWITCH" -> "wireshark" [ color="red",arrowhead="crow" ];
+# "SWITCH" -> "wireshark" [ color="red",arrowhead="crow" ];
  "client1" [ label="laptop3",shape="box",style="filled",color="grey" ];
  "client2" [ label="random laptop",shape="box",style="filled",color="grey" ];
  "client3" [ label="random laptop",shape="box",style="filled",color="grey" ];
-# "client4" [ label="random laptop (wireless)",shape="box",style="filled",color="grey" ];
  "Internet" -> "SD-AFTR-1" [ label="IPv6: UNKNOWN",color="green",arrowhead="crow" ];
  "Internet" -> "SD-AFTR-2" [ label="IPv6: UNKNOWN",color="green",arrowhead="crow" ];
  "SD-B4-1" -> "client1" [ color="red",arrowhead="crow" ];
  "SD-B4-1" -> "client2" [ color="red",arrowhead="crow" ];
  "SD-B4-2" -> "client3" [ color="red",arrowhead="crow" ];
-# "SD-B4-2" -> "client4" [ color="yellow",style="dashed",arrowhead="none" ];
 }
