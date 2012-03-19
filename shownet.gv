@@ -13,7 +13,7 @@ digraph G {
 	    shape="box",style="filled",color="grey" ];
  "SD-CPE2" [label="Cerowrt WNDR3700v2 (SD-CPE 2)\nEXT MAC: UN:KN:OW:N:::\lEXT IPv6: 2001:db8::3/64\l    INT IP: 172.28.1.0/24\lDNS FORWARDER:2001:db8::1\l",
 	    shape="box",style="filled",color="grey" ];
- "wireshark" [label="Wireshark Laptop\nEXT MAC: UN:KN:OW:N:::\l INT IP: NONE (raw port)\l",
+ "wireshark" [label="Wireshark Laptop (whose?)\nEXT MAC: UN:KN:OW:N:::\l INT IP: NONE (raw port)\l",
 	    shape="box",style="filled",color="grey" ];
  "SWITCH" -> "SD-AFTR-2" [ label="172.27.1.0/24",color="blue",arrowhead="crow" ];
  "SWITCH" -> "SD-AFTR-1" [ label="172.27.1.0/24",color="blue",arrowhead="crow" ];
